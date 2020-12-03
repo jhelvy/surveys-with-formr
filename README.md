@@ -8,7 +8,7 @@ lightning talk “Using {formr} to create R-powered surveys with
 individualized feedback.”
 
 View the slides
-[here](https://jhelvy.github.io/surveys-with-formr/slides/surveys-with-formr.html)
+[here](https://jhelvy.github.io/surveys-with-formr/slides/index.html)
 
 -----
 
