@@ -85,11 +85,12 @@ These platforms work great for simple surveys - they're easy to use, relatively 
 
 ---
 class: center, middle
-background-color: #000
 
+.noborder[
 <center>
-<img src="images/dice.jpg" width=600>
+<img src="images/simple-complex.svg" width=900>
 </center>
+]
 
 ???
 
@@ -157,8 +158,81 @@ class: center, middle, inverse
 ???
 
 So what can formr do?
+
 Well, just about anything you can do with R code.
 
 ---
+class: middle, center
 
+<center>
+<img src="images/htmlwidgets.gif" width=700>
+</center>
 
+https://formr.org/interactive_charts
+
+???
+
+For example, you could use any of the common R packages to make interactive charts that the survey respondent can experience.
+
+---
+class: middle, center
+
+<center>
+<img src="images/feedback.png" width=900>
+</center>
+
+???
+
+You could also use ggplot to create plots of the survey respondent's answers, giving them feedback about their answers. In this example, I'm showing the respondent how their risk preferences compare to those of others based on their answers to previous questions.
+
+---
+class: middle, center, inverse
+
+# .font200[how]
+
+```{r child="formr-logo.Rmd"}
+```
+
+# .font200[works]
+
+???
+
+1 minute showing the basics of how it works (using a demo google sheet to make questions, then uploading it to formr).
+
+---
+class: middle, center, inverse
+
+# .font140[Showing randomized images]
+<br>
+# .font140[Making randomized quizzes]
+
+---
+class: middle, center, inverse
+
+# .orange[.font140[Showing randomized images]]
+<br>
+# .font140[Making randomized quizzes]
+
+???
+
+1 minute showing how I've used it to create conjoint surveys, which again display randomized questions to each respondent.
+
+---
+class: middle, center, inverse
+
+# .font140[Showing randomized images]
+<br>
+# .orange[.font140[Making randomized quizzes]]
+
+???
+
+1 minute showing how I've used it to create quizzes in my class with randomized questions for each student.
+
+---
+class: middle, center, inverse
+
+# .font140[The {formr} package]
+
+???
+
+1 minute showing how to get data from a survey with the {formr} package
