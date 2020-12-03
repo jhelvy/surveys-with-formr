@@ -94,10 +94,10 @@ class: center, middle
 
 ???
 
-But what if you wanted to make a more complex survey, like one where questions are randomized, or where respondents can be shown interactive feedback of how their responses compare to others?
+But what if you wanted to make a more complex survey, like one where questions are randomly displayed for each respondent, or where respondents can be shown interactive feedback about their responses?
 
 ---
-class: center, middle, inverse 
+class: center, middle, inverse
 
 ```{r child="formr-logo.Rmd"}
 ```
@@ -107,7 +107,7 @@ class: center, middle, inverse
 Well, thankfully some really clever folks at the George Elias Muller Institute created formr, which uses R and RMarkdown to create interactive surveys.
 
 ---
-class: center, middle 
+class: center, middle
 
 .leftcol[.circle[
 <center>
@@ -126,7 +126,9 @@ class: center, middle
 
 ???
 
-Just for full disclosure, I am not part of the developer team for formr. Formr was developed by Cyril Tata and Ruben Arslan. 
+Just for full disclosure, I am not part of the developer team for formr.
+
+Formr was developed by Cyril Tata and Ruben Arslan.
 
 ---
 class: center, middle, inverse
@@ -145,10 +147,10 @@ class: center, middle, inverse
 
 ???
 
-I'm just a big fan of the platform and wanted to share it with the rest of the R universe.
+I'm just a big fan of the platform, so I made this talk to share it with the rest of the R universe and demonstrate a few ways of how I've used it.
 
 ---
-class: center, middle, inverse 
+class: center, middle, inverse
 
 ```{r child="formr-logo.Rmd"}
 ```
@@ -159,7 +161,34 @@ class: center, middle, inverse
 
 So what can formr do?
 
-Well, just about anything you can do with R code.
+---
+class: middle, center, inverse
+
+<style>
+.columnnarrow {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+</style>
+
+.leftcol45[.noborder[
+<br><br><br><br><img src="images/surveymonkey.svg">
+]]
+.columnnarrow[<br><br>
+# .font200[`r fa("plus", fill = "white")`]
+]
+.rightcol30[
+<center>
+<img src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/rmarkdown.png">
+</center>
+]
+
+???
+
+Well, think of it like Survey Monkey plus RMarkdown.
+
+You can use it field simple surveys, but you can also use R code to generate a much richer set of customized survey features.
 
 ---
 class: middle, center
@@ -172,7 +201,7 @@ https://formr.org/interactive_charts
 
 ???
 
-For example, you could use any of the common R packages to make interactive charts that the survey respondent can experience.
+For example, you could insert code chunks to generate interactive charts that the survey respondent can experience.
 
 ---
 class: middle, center
@@ -183,7 +212,7 @@ class: middle, center
 
 ???
 
-You could also use ggplot to create plots of the survey respondent's answers, giving them feedback about their answers. In this example, I'm showing the respondent how their risk preferences compare to those of others based on their answers to previous questions.
+Or you could use R code to generate dynamic feedback about a respondent's answers. In this example, I'm showing the respondent how their risk preferences compare to those of others based on their answers to previous questions.
 
 ---
 class: middle, center, inverse
@@ -197,36 +226,117 @@ class: middle, center, inverse
 
 ???
 
-1 minute showing the basics of how it works (using a demo google sheet to make questions, then uploading it to formr).
+So how does it work?
+
+---
+class: center, middle
+background-image: url(images/googlesheet0.png)
+background-size: contain
+
+???
+
+Formr relies on Googlesheets to input the main content for each survey.
+
+Here's an example of a simple survey Googlesheet.
+
+Each row is an item that will be displayed on the survey.
+
+Each column controls what will be shown.
+
+---
+class: center, middle
+background-image: url(images/googlesheet1.png)
+background-size: contain
+
+???
+
+The "label" column is where you insert markdown or code chunks that you want to display in the survey.
+
+---
+class: center, middle
+background-image: url(images/googlesheet2.png)
+background-size: contain
+
+???
+
+The "type" column is where you set the type of each question to show. 
+
+You can choose from a long list of options, like multiple choice, text entry, or simply just display text. 
+
+---
+class: center, middle
+background-image: url(images/googlesheet3.png)
+background-size: contain
+
+???
+
+Depending on the type of question, you may also have some options for respondents to choose from.
+
+---
+class: center, middle
+background-image: url(images/googlesheet4.png)
+background-size: contain
+
+???
+
+And you can also customize the look and feel with some styling options
+
+---
+class: middle
+
+.noborder[
+<center>
+<img src="images/screenshot-upload.png" width=1000>
+</center>
+]
+
+???
+
+Once you've got your spreadsheet ready, you can go to formr.org, input the link to your Googlesheet, and your code will be compiled into a survey. 
+
+---
+class: center, middle
+background-image: url(images/screenshot-apple.png)
+background-size: contain
+
+???
+
+Here is one page from the example sheet I just showed you where I'm ask a multiple choice question.
 
 ---
 class: middle, center, inverse
 
 # .font140[Showing randomized images]
 <br>
-# .font140[Making randomized quizzes]
+# .font140[Timed, randomized quizzes]
+
+???
+
+I'd like to spend the last couple minutes of this talk showing how I've used formr in my own work. 
+
+Specifically, I've used formr to show people randomized images in a research method known as conjoint analysis, and I've also used it to create timed, randomized quizzes for my classes that I teach at George Washington University.
 
 ---
 class: middle, center, inverse
 
 # .orange[.font140[Showing randomized images]]
 <br>
-# .font140[Making randomized quizzes]
+# .font140[Timed, randomized quizzes]
 
 ???
 
-1 minute showing how I've used it to create conjoint surveys, which again display randomized questions to each respondent.
+I'll start with a demo of how to display randomized images
 
 ---
 class: middle, center, inverse
 
 # .font140[Showing randomized images]
 <br>
-# .orange[.font140[Making randomized quizzes]]
+# .orange[.font140[Timed, randomized quizzes]]
 
 ???
 
-1 minute showing how I've used it to create quizzes in my class with randomized questions for each student.
+I've used a similar approach to create timed, randomized quizzes for my classes. 
 
 ---
 class: middle, center, inverse

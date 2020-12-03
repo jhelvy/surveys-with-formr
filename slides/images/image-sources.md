@@ -2,6 +2,8 @@ Original media:
 
 - htmlwidgets.gif
 - helveston.jpg
+- googlesheet0.png
+- googlesheet0.ai
 
 Sourced media:
 
