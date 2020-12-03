@@ -7,6 +7,9 @@ These files were used in creating John Helveston’s rstudio::conf 2021
 lightning talk “Using formr to create R-powered surveys with
 individualized feedback.”
 
+View the slides
+[here](https://jhelvy.github.io/surveys-with-formr/slides/surveys-with-formr.html)
+
 -----
 
 ### License
