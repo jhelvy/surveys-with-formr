@@ -147,7 +147,7 @@ class: center, middle, inverse
 
 ???
 
-I'm just a big fan of the platform, so I made this talk to share it with the rest of the R universe and demonstrate a few ways of how I've used it.
+I'm just a formr super fan, so I made this talk to share it with the rest of the R universe and demonstrate a few ways of how I've used it.
 
 ---
 class: center, middle, inverse
@@ -212,7 +212,9 @@ class: middle, center
 
 ???
 
-Or you could use R code to generate dynamic feedback about a respondent's answers. In this example, I'm showing the respondent how their risk preferences compare to those of others based on their answers to previous questions.
+Or you could use R code to generate dynamic feedback about the answers a respondent gave.
+
+This chart, for example, was dynamically generated based on the answers a respondent gave to a set of questions about their risk preferences, giving them feedback about how they compare to others.
 
 ---
 class: middle, center, inverse
@@ -235,9 +237,9 @@ background-size: contain
 
 ???
 
-Formr relies on Googlesheets to input the main content for each survey.
+Formr relies on a spreadsheet format to input content for each survey.
 
-Here's an example of a simple survey Googlesheet.
+Here is an example Googlesheet for a simple survey.
 
 Each row is an item that will be displayed on the survey.
 
@@ -259,9 +261,9 @@ background-size: contain
 
 ???
 
-The "type" column is where you set the type of each question to show. 
+The "type" column is where you set the type of each question to show.
 
-You can choose from a long list of options, like multiple choice, text entry, or simply just display text. 
+You can choose from a long list of options, like multiple choice, text entry, or simply just display text.
 
 ---
 class: center, middle
@@ -270,7 +272,7 @@ background-size: contain
 
 ???
 
-Depending on the type of question, you may also have some options for respondents to choose from.
+Depending on the type of question, you may also have some options for respondents to choose from, like a multiple choice question.
 
 ---
 class: center, middle
@@ -292,7 +294,7 @@ class: middle
 
 ???
 
-Once you've got your spreadsheet ready, you can go to formr.org, input the link to your Googlesheet, and your code will be compiled into a survey. 
+Once you've got your spreadsheet ready, you can go to formr.org, input the link to your Googlesheet, and your code will be compiled into a survey.
 
 ---
 class: center, middle
@@ -312,7 +314,7 @@ class: middle, center, inverse
 
 ???
 
-I'd like to spend the last couple minutes of this talk showing how I've used formr in my own work. 
+I'd like to spend the last couple minutes of this talk showing how I've used formr in my own work.
 
 Specifically, I've used formr to show people randomized images in a research method known as conjoint analysis, and I've also used it to create timed, randomized quizzes for my classes that I teach at George Washington University.
 
@@ -336,7 +338,7 @@ class: middle, center, inverse
 
 ???
 
-I've used a similar approach to create timed, randomized quizzes for my classes. 
+I've used a similar approach to create timed, randomized quizzes for my classes.
 
 ---
 class: middle, center, inverse
