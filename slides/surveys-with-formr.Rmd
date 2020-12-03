@@ -1,0 +1,59 @@
+---
+title: "Using formr to create R-powered surveys with
+individualized feedback"
+author: "John Paul Helveston"
+output:
+  xaringan::moon_reader:
+    css: ["default", "css/lexis.css", "css/lexis-fonts.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+    seal: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+    warning = FALSE,
+    message = FALSE,
+    comment = "#>",
+    fig.path = "figs/",
+    fig.retina = 3 # Better figure resolution
+)
+library(fontawesome)
+today <- format(Sys.Date(), format="%B %d %Y")
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+# Enables the ability to show all slides in a tile overview by pressing "o"
+# devtools::install_github("gadenbuie/xaringanExtra")
+xaringanExtra::use_tile_view()
+```
+
+layout: true
+
+<!-- this adds the link footer to all slides, depends on my-footer class in css-->
+
+<div class="footer-small">
+<span>
+https://github.com/jhelvy/surveys-with-formr
+</span>
+</div>
+
+---
+name: title-slide
+class: inverse, center, middle
+background-image: url(images/blackboard.jpg)
+
+# Using {formr} to create `r fa("r-project", fill = "white")` powered surveys<br>with individualized feedback
+
+
+# .font120[ `r fa("sad-tear", fill = "white")` `r fa("frown", fill = "white")` `r fa("meh", fill = "white")` `r fa("smile", fill = "white")` `r fa("grin-beam", fill = "deepskyblue")`<br>&emsp;&emsp;&emsp;&emsp;&nbsp;`r fa("hand-point-up", fill = "deepskyblue")`]
+
+.large[by John Paul Helveston]
+
+`r today`
+
+---
