@@ -1,14 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+Last updated: December 07, 2020
+
 # Overview
 
 These files were used in creating John Helveston’s rstudio::conf 2021
-lightning talk “Using {formr} to create R-powered surveys with
+lightning talk titled “Using {formr} to create R-powered surveys with
 individualized feedback.”
 
-View the slides
-[here](https://jhelvy.github.io/surveys-with-formr/slides/index.html)
+> View the slides
+> [here](https://jhelvy.github.io/surveys-with-formr/slides/index.html)
 
 -----
 
