@@ -9,10 +9,10 @@ Original media:
 - googlesheet3.png
 - googlesheet4.png
 - screenshot-apple.png
-- screenshot-apple1.png
 - screenshot-upload.png
-- screenshot-quiz2.png
 - screenshot-quiz1.png
+- screenshot-quiz2.png
+- screenshot-options.png
 
 Sourced media:
 

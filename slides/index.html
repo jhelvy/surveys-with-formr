@@ -40,7 +40,7 @@ background-image: url(images/blackboard.jpg)
 
 .large[by John Paul Helveston]
 
-December 07 2020
+December 08 2020
 
 ???
 
@@ -63,9 +63,9 @@ class: center, middle
 
 ???
 
-If you're someone who has ever had to make a survey, chances are you've probably used one of the free platforms out there, like Survey Monkey or Google Forms.
+If you're someone who has ever had to make a survey, chances are you've probably used something like Survey Monkey or Google Forms.
 
-These platforms work great for simple surveys - they're easy to use, relatively secure, and getting the data from them is pretty straightforward.
+And these platforms work great for simple surveys.
 
 ---
 class: center, middle
@@ -78,7 +78,7 @@ class: center, middle
 
 ???
 
-But what if you needed your survey to be a little more complex, like you wanted to show respondents interactive feedback based on their answers to survey questions?
+But what if you needed your survey to be a little more complex than what these platforms offer?
 
 ---
 class: center, middle, inverse
@@ -88,7 +88,7 @@ class: center, middle, inverse
 
 ???
 
-Well, thankfully some really clever people made formr, which uses R and RMarkdown code to create surveys.
+Well, thankfully some really clever people made formr, which uses R and RMarkdown code to create rich, complex surveys.
 
 ---
 class: center, middle
@@ -134,7 +134,7 @@ class: center, middle, inverse
 
 ???
 
-I'm just a formr super fan, and I made this talk to share it with the rest of the R universe and to demonstrate some of the cool things you can do with it.
+I'm just a formr super fan, and I made this talk to share it with the rest of the R community and to demonstrate some of the cool things you can do with it.
 
 ---
 class: center, middle, inverse
@@ -175,7 +175,7 @@ class: middle, center, inverse
 
 Well, I kind of think it like Survey Monkey plus RMarkdown.
 
-Basically, you can use it create simple surveys like most online survey platforms, but you can also use R code to generate a much richer set of features.
+You can use it create simple surveys, but you can also use R code to generate a much richer set of features.
 
 ---
 class: middle, center
@@ -188,7 +188,7 @@ https://formr.org/interactive_charts
 
 ???
 
-For example, you could generate interactive charts that the survey respondent could experience while taking the survey.
+For example, you could create interactive charts that survey respondents could experience while taking the survey.
 
 ---
 class: middle, center
@@ -203,9 +203,9 @@ class: middle, center
 
 ???
 
-Or you could use R code to generate dynamic feedback for survey respondents.
+Or you could use R code to generate dynamic feedback.
 
-For example, a chart like this was dynamically generated for each respondent in a longitudinal study showing how their risk preferences compared to others based on their answers to previous questions.
+For example, images like this were generated with ggplot code for each respondent in a longitudinal study, showing them their risk preferences for different activities based on their answers to previous questions.
 
 ---
 class: middle, center, inverse
@@ -219,18 +219,22 @@ class: middle, center, inverse
 
 ???
 
-So how does it work?
+At this point you may be wondering how this all works. 
+
+So let's dig into some of the details.
 
 ---
 class: center, middle
 background-color: #FFFFFF
+
+# Open source components
 
 .leftcol40[.noborder[
 &lt;center&gt;
 &lt;img src="images/google-sheets-logo.png" width=500&gt;
 &lt;/center&gt;
 ]]
-.columnnarrow[&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.columnnarrow[&lt;br&gt;&lt;br&gt;
 # .font200[&lt;svg style="height:0.8em;top:.04em;position:relative;fill:black;" viewBox="0 0 448 512"&gt;&lt;path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/&gt;&lt;/svg&gt;]
 ]
 .rightcol40[.noborder[
@@ -244,11 +248,13 @@ background-color: #FFFFFF
 
 ???
 
-formr relies on two platforms to create surveys
+Surveys in formr are built using open source components
 
-The text and code for each survey are input using a spreadsheet, like Google sheets, 
+The text and code for each survey are input using Google sheets, 
 
-and once the survey is live, R code is computed using Open CPU
+and once the survey is live, R code is computed using Open CPU. 
+
+This makes it really easy to make your work as transparent as you'd like.
 
 ---
 class: center, middle
@@ -257,7 +263,7 @@ background-size: contain
 
 ???
 
-Here is an example Googlesheet for a simple survey.
+Here is an example Googlesheet.
 
 Each row is an item that will be displayed on the survey.
 
@@ -301,18 +307,20 @@ background-size: contain
 
 And you can also customize the look and feel with some styling options
 
+It's analygous to a R Markdown document, where the style and question type columns are sort of like the YAML
+
+And the label and choice columns contain the content you want to display.
+
 ---
 class: middle
 
-.noborder[
 &lt;center&gt;
-&lt;img src="images/screenshot-upload.png" width=1000&gt;
+&lt;img src="images/screenshot-upload.png" width=900&gt;
 &lt;/center&gt;
-]
 
 ???
 
-Once you've got your spreadsheet ready, you can login to formr.org, input the link to your Googlesheet, and your sheet will be converted into a survey.
+Once you've got your spreadsheet ready, you can login to formr.org, input the link to your Googlesheet, and formr will convert it into a survey.
 
 ---
 class: center, middle
@@ -321,13 +329,14 @@ background-size: contain
 
 ???
 
-The example Google sheet I just showed generates a survey with multiple choice questions about apples that look like this.
+The example I just showed generates a survey with multiple choice questions about apples that look like this in a web browser.
 
 ---
 
-# .center[The {formr} package]
+# .center[Use the {formr} package to get data]
 
-.leftcol70[
+.leftcol20[&amp;zwj;]
+.leftcol60[
 
 ```r
 *library(formr)
@@ -338,7 +347,7 @@ The example Google sheet I just showed generates a survey with multiple choice q
 * password = '*****')
 
 # Import raw data
-*raw &lt;- formr_raw_results(survey_name = 'apple_survey')
+*raw &lt;- formr_raw_results(survey_name = 'apples')
 
 # Save raw data
 write_csv(raw, here::here('raw_data.csv'))
@@ -347,9 +356,7 @@ write_csv(raw, here::here('raw_data.csv'))
 
 ???
 
-Of course, once you've fielded your survey, you'll want to access the data. 
-
-This can be downloaded from your account admin page or imported into R using the formr package, which has convenient functions for connecting to your account and importing results.
+Once your survey is live, you can use the associated formr R package to import results as a nicely formatted data frame.
 
 ---
 class: middle, center, inverse
@@ -360,7 +367,7 @@ class: middle, center, inverse
 
 ???
 
-Now that we know a little bit about how formr works, I'd like to spend my last couple minutes showing how I've used formr in my own work.
+Now that we know a little bit about how formr works, I'd like to show a couple examples of how I've used formr in my own work.
 
 ---
 class: middle, center, inverse
@@ -380,20 +387,23 @@ background-size: contain
 
 ???
 
-In conjoint surveys, you ask people to choose from randomized profiles of different products, then you can use that choice data to estimate their preferences for attributes of those products. 
+In conjoint surveys, you ask people to choose from randomized profiles of different products. You can then use that data to estimate their preferences for attributes of those products. 
 
-So, if I wanted to know how much people felt about the price and freshness of different apples, I could show them profiles like this, and in each question I'll vary the values shown.
+So, for example, if I wanted to know how people felt about the price or freshness of different apples, I could ask them to choose from profiles like this.
+
+In each question, I'll randomly change the values in the profiles.
 
 ---
 class: middle
 
-.code60[
+.code80[
 
-```
+
+```r
 #&gt;            type price freshness            image respID qID altID obsID
-#&gt; 1          Gala   1.0 Excellent         gala.jpg      1   1     1     1
-#&gt; 2          Gala   4.0      Poor         gala.jpg      1   1     2     1
-#&gt; 3     Pink Lady   1.0 Excellent     pinkLady.jpg      1   1     3     1
+*#&gt; 1          Gala   1.0 Excellent         gala.jpg      1   1     1     1
+*#&gt; 2          Gala   4.0      Poor         gala.jpg      1   1     2     1
+*#&gt; 3     Pink Lady   1.0 Excellent     pinkLady.jpg      1   1     3     1
 #&gt; 4    Honeycrisp   2.5      Poor   honeycrisp.jpg      1   2     1     2
 #&gt; 5 Red Delicious   2.5      Poor redDelicious.jpg      1   2     2     2
 #&gt; 6 Red Delicious   1.0 Excellent redDelicious.jpg      1   2     3     2
@@ -401,13 +411,15 @@ class: middle
 ]
 .noborder[
 &lt;center&gt;
-&lt;img src="images/screenshot-conjoint.png" width=800&gt;
+&lt;img src="images/screenshot-conjoint.png" width=650&gt;
 &lt;/center&gt;
 ]
 
 ???
 
-I can also pre-define the profiles in a data frame, then use those values to dynamically create the profiles shown in the survey.
+And because I'm working in R, I can pre-define the profiles in a data frame.
+
+So in this example, the three profiles shown are generated from the first three rows in this data frame.
 
 ---
 class: middle, center, inverse
@@ -421,32 +433,72 @@ class: middle, center, inverse
 I've also used formr to create timed, randomized quizzes for my classes.
 
 ---
+class: middle
+
+
+```r
+q1a &lt;- "What's your favoriate **animal**?"
+q1b &lt;- "What's your favoriate **color**?"
+```
+
+.leftcol[
+
+### .center[Version A]
+
+
+```r
+q1_text &lt;- sample(c(q1a, q1b), size = 1)
+q1_text
+```
+
+```
+#&gt; [1] "What's your favoriate **animal**?"
+```
+Display text:
+
+```r
+`r q1_text`
+```
+What's your favoriate **animal**?
+]
+.rightcol[
+
+### .center[Version B]
+
+
+```r
+q1_text &lt;- sample(c(q1a, q1b), size = 1)
+q1_text
+```
+
+```
+#&gt; [1] "What's your favoriate **color**?"
+```
+Display text:
+
+```r
+`r q1_text`
+```
+What's your favoriate **color**?
+]
+
+???
+
+I do this by creating an "A" and "B" version of every question on a quiz. 
+
+Then I use the sample function to randomly select a version for each question. 
+
+In this example, you might be asked what's your favorite animal or what's your favorite color depending on which question is selected.
+
+---
 class: center, middle
 
 .leftcol[.noborder[
-.left[
-
-```r
-sample(c("A", "B"), size = 1)
-```
-```
-"A"
-```
-]
 &lt;center&gt;
 &lt;img src="images/screenshot-quiz1.png"&gt;
 &lt;/center&gt;
 ]]
 .rightcol[.noborder[
-.left[
-
-```r
-sample(c("A", "B"), size = 1)
-```
-```
-"B"
-```
-]
 &lt;center&gt;
 &lt;img src="images/screenshot-quiz2.png"&gt;
 &lt;/center&gt;
@@ -454,14 +506,21 @@ sample(c("A", "B"), size = 1)
 
 ???
 
-I do this by creating two versions of every question on a quiz. 
+With just a 5 question quiz, I can create 32 unique quizzes.
 
-Then I use the sample function to randomly choose each version of each question. 
-
-This results in a unique quiz for nearly every student.
+In this example, I've also added a timer so that the quiz will automatically submit when the time is up.
 
 ---
 class: center, middle
+background-image: url(images/screenshot-options.png)
+background-size: contain
+
+???
+
+That's just a few examples of how I've used formr, but I encourage you to check out formr.org to see some of the other complex designs you can make, like longitudinal or diary studies with automated email and text message reminders.
+
+---
+class: center
 
 .leftcol[
 ## Number of admin accounts
@@ -478,10 +537,13 @@ class: center, middle
 
 ???
 
-formr has now been around for several years, and there's a growing user base as well as a very active support group with lots of great examples.
+Today, over a million people have filled out a survey on formr. 
+
+And there's a growing user base with a very active support group, so you'll have the help you need to build whatever survey you want.
 
 ---
-class: center, middle, inverse, no-slide-number
+class: inverse, center, middle
+background-image: url(images/blackboard.jpg)
 
 # .font150[Thanks!]
 
