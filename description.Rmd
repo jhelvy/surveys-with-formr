@@ -17,16 +17,17 @@ Last updated: `r today`
 
 These files were used in creating John Helveston's rstudio::conf 2021 lightning talk titled "Using {formr} to create R-powered surveys with individualized feedback."
 
-> View the slides [here](https://jhelvy.github.io/surveys-with-formr/slides/index.html)
+[`r fa("external-link-alt")` View slides in a new window](https://jhelvy.github.io/surveys-with-formr/slides/index.html){target="_blank"}
 
------
+[`r fa("far fa-file-pdf")` Download slides as a PDF](https://jhelvy.github.io/surveys-with-formr/slides/surveys-with-formr.pdf)
 
 # Surveys
 
 In my presentation, I showed several examples of how to use the {formr} package to create different types of surveys. The surveys are all generated from Google sheets, which can be found here:
 
-1. [randomImagesDemo](https://docs.google.com/spreadsheets/d/1hs551J6PYJNxc4sftmJyUqj6XYGYFVnN_5faQBWY7cs/edit?usp=sharing) demonstrates how to randomly display different images.
-2. [timedQuizDemo](https://docs.google.com/spreadsheets/d/1PAHG15ijvVpCO3Ny9biAnzJTonLLfzPDDBKg1vA0ZEs/edit?usp=sharing) demonstrates how to create a timed quiz with randomly generated questions.
+1. [Random images](https://docs.google.com/spreadsheets/d/1hs551J6PYJNxc4sftmJyUqj6XYGYFVnN_5faQBWY7cs/edit?usp=sharing) demonstrates how to randomly display different images.
+2. [Conjoint surveys](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/) demonstrates how to create a conjoint survey with formr (go to the [formr4conjoint](https://github.com/jhelvy/formr4conjoint) repo for a more detailed description)
+3. [Timed quizzes](https://docs.google.com/spreadsheets/d/1PAHG15ijvVpCO3Ny9biAnzJTonLLfzPDDBKg1vA0ZEs/edit?usp=sharing) demonstrates how to create a timed quiz with randomly generated questions.
 
 To use any of these surveys yourself, go to [formr.org](https://formr.org/), create an account. Once you log in, go to the [admin](https://formr.org/admin) page and create a new survey. You can then paste in the link to the Google sheet there. If you want to edit it, just create copy of the Google sheet into your own Google Drive account and use the shared link to that Google sheet.
 
